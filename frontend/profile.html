@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Campus - Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<svg class="branch-decoration" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M140 10 Q100 20 80 50 Q60 80 30 90" stroke="#5a4632" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M100 30 Q90 25 85 15" stroke="#5a4632" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M70 60 Q60 55 55 45" stroke="#5a4632" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <g transform="translate(85,15)">
+        <circle cx="0" cy="-6" r="6" fill="#f4b8c1"/>
+        <circle cx="6" cy="-2" r="6" fill="#f4b8c1"/>
+        <circle cx="4" cy="5" r="6" fill="#f4b8c1"/>
+        <circle cx="-4" cy="5" r="6" fill="#f4b8c1"/>
+        <circle cx="-6" cy="-2" r="6" fill="#f4b8c1"/>
+        <circle cx="0" cy="0" r="3" fill="#e8909f"/>
+    </g>
+
+    <g transform="translate(55,45)">
+        <circle cx="0" cy="-5" r="5" fill="#f7c8cf"/>
+        <circle cx="5" cy="-2" r="5" fill="#f7c8cf"/>
+        <circle cx="3" cy="4" r="5" fill="#f7c8cf"/>
+        <circle cx="-3" cy="4" r="5" fill="#f7c8cf"/>
+        <circle cx="-5" cy="-2" r="5" fill="#f7c8cf"/>
+        <circle cx="0" cy="0" r="2.5" fill="#e8909f"/>
+    </g>
+
+    <g transform="translate(30,90)">
+        <circle cx="0" cy="-5" r="5" fill="#f4b8c1"/>
+        <circle cx="5" cy="-2" r="5" fill="#f4b8c1"/>
+        <circle cx="3" cy="4" r="5" fill="#f4b8c1"/>
+        <circle cx="-3" cy="4" r="5" fill="#f4b8c1"/>
+        <circle cx="-5" cy="-2" r="5" fill="#f4b8c1"/>
+        <circle cx="0" cy="0" r="2.5" fill="#e8909f"/>
+    </g>
+
+    <g transform="translate(120,25)">
+        <circle cx="0" cy="-4" r="4" fill="#f7c8cf"/>
+        <circle cx="4" cy="-1" r="4" fill="#f7c8cf"/>
+        <circle cx="2" cy="3" r="4" fill="#f7c8cf"/>
+        <circle cx="-2" cy="3" r="4" fill="#f7c8cf"/>
+        <circle cx="-4" cy="-1" r="4" fill="#f7c8cf"/>
+    </g>
+</svg>
+
+    <div class="container">
+
+        <div class="page-title">Profile</div>
+
+        <div class="card" id="profile-card">
+            <div class="card-title" id="profile-name">Loading...</div>
+            <div class="card-subtitle" id="profile-email"></div>
+            <div class="card-subtitle" id="profile-department"></div>
+            <div class="card-subtitle" id="profile-role"></div>
+        </div>
+
+        <button id="logout-btn" class="secondary-btn" style="margin-top: 20px;">Logout</button>
+
+    </div>
+
+    <div class="bottom-nav">
+        <a href="bookings.html">Bookings</a>
+        <a href="home.html">Home</a>
+        <a href="profile.html" class="active">Profile</a>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/petals.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

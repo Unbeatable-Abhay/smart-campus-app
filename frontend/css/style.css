@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #faf6ee;
+    font-family: Arial, sans-serif;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 70px;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #e8ddc9;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #ffffff;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e8ddc9;
+    border-left: 4px solid #bc002d;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+.card.status-approved {
+    border-left-color: #2f6b4f;
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.card-subtitle {
+    font-size: 12px;
+    color: #8a8272;
+    margin-top: 4px;
+}
+
+.status-tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    background-color: #faeceb;
+    color: #bc002d;
+}
+
+.status-tag.approved {
+    background-color: #eaf3ee;
+    color: #2f6b4f;
+}
+
+.booking-form {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #e8ddc9;
+    display: none;
+}
+
+.booking-form.open {
+    display: block;
+}
+
+button {
+    width: 100%;
+    background-color: #bc002d;
+    border: none;
+    color: #ffffff;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #9a0025;
+}
+
+button.secondary-btn {
+    background-color: #8a8272;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #e8ddc9;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+label {
+    font-size: 13px;
+    color: #444444;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.error-message {
+    color: #bc002d;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-top: 1px solid #e8ddc9;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+}
+
+.bottom-nav a {
+    color: #8a8272;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.bottom-nav a.active {
+    color: #bc002d;
+}
+
+.petal {
+    position: fixed;
+    top: -20px;
+    width: 12px;
+    height: 12px;
+    background-color: #f4b8c1;
+    border-radius: 0 100% 0 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.8;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) translateX(40px) rotate(360deg);
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.bottom-nav {
+    z-index: 2;
+}
+
+.center-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='30' viewBox='0 0 60 30'%3E%3Cpath d='M0 15 Q15 0 30 15 Q45 30 60 15' stroke='%23bc002d' stroke-width='0.5' fill='none' opacity='0.08'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+}
+
+.branch-decoration {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 140px;
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.9;
+}
+
+.hanko {
+    border: 2px solid #bc002d;
+    border-radius: 50%;
+    padding: 6px 12px;
+    font-weight: bold;
+    background-color: transparent !important;
+    color: #bc002d !important;
+    transform: rotate(-8deg);
+    display: inline-block;
+}
