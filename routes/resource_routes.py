@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from models.resource import get_all_resources, create_resource, update_resource, delete_resource
 from services.parallel_search import search_available_resources
-from utils.auth_utils import token_required
+from utils.auth_utils import token_required, role_required
 
 resource_bp = Blueprint("resources", __name__)
 
