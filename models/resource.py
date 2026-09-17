@@ -54,4 +54,23 @@ def check_resource_availability(resource_id, start_time, end_time):
     cursor.close()
     release_connection(conn)
 
+    def update_resource(resource_id, name, type, capacity, department, location):
+        conn = get_connection()
+        cursor = conn.cursor()
+        cursor.execute(
+            "UPDATE resources SET name = %s, type = %s, capacity = %s, department = %s, location = %s WHERE id = %s",
+            (name, type, capacity, department, location, resource_id)
+        )
+        conn.commit()
+        cursor.close()
+        release_connection(conn)
+
+    def delete_resource(resource_id):
+        conn = get_connection()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM resources WHERE id = %s", (resource_id,))
+        conn.commit()
+        cursor.close()
+        release_connection(conn)
+
     return conflict_count == 0
