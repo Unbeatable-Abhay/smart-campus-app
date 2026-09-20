@@ -9,7 +9,11 @@ if (!getToken()) {
 let allResources = [];
 
 async function loadResources() {
-    resourceList.innerHTML = "";
+    const anyFormOpen = document.querySelector(".booking-form.open");
+    if (anyFormOpen) {
+        return;
+    }
+
     errorBox.style.display = "none";
 
     const result = await apiGetResources();
@@ -21,7 +25,13 @@ async function loadResources() {
     }
 
     allResources = result.data;
-    renderResources(allResources);
+
+    const query = searchInput.value.toLowerCase();
+    if (query) {
+        applySearchFilter(query);
+    } else {
+        renderResources(allResources);
+    }
 }
 
 function renderResources(resourceArray) {
@@ -103,9 +113,7 @@ function renderResourceCard(resource) {
     resourceList.appendChild(card);
 }
 
-searchInput.addEventListener("input", function () {
-    const query = searchInput.value.toLowerCase();
-
+function applySearchFilter(query) {
     const filtered = allResources.filter(function (resource) {
         const name = (resource.name || "").toLowerCase();
         const type = (resource.type || "").toLowerCase();
@@ -115,6 +123,11 @@ searchInput.addEventListener("input", function () {
     });
 
     renderResources(filtered);
+}
+
+searchInput.addEventListener("input", function () {
+    applySearchFilter(searchInput.value.toLowerCase());
 });
 
 loadResources();
+setInterval(loadResources, 5000);
