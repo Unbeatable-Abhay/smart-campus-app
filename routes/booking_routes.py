@@ -74,6 +74,9 @@ def update_booking(booking_id):
     if booking is None:
         return jsonify({"error": "Booking not found"}), 404
 
+    if booking["status"] != "pending":
+        return jsonify({"error": "This booking has already been " + booking["status"] + " and cannot be changed"}), 400
+
     is_owner = booking["user_id"] == request.user_id
     is_admin = request.user_role == "admin"
 
